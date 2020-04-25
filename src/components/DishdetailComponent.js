@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from "reactstrap";
+
+import { Link } from "react-router-dom";
 
 class DishDetails extends Component {
   renderDish(dish) {
@@ -19,14 +29,15 @@ class DishDetails extends Component {
       );
     else return <div></div>;
   }
-  renderComments(dish) {
-    if (dish != null) {
+  renderComments(comments) {
+    console.log(comments);
+    if (comments != null) {
       return (
-        <div className="col-12 col-md-5 m-1" key={dish.description}>
+        <div className="col-12 col-md-5 m-1" key={comments}>
           <h4>Comments</h4>
-          <div key={dish.name}>
+          <div>
             <ul className="list-unstyled">
-              {dish.comments.map((c) => {
+              {comments.map((c) => {
                 return (
                   <ul className="list-unstyled" key={c.author}>
                     <li>{c.comment}</li>
@@ -46,9 +57,26 @@ class DishDetails extends Component {
   }
   render() {
     return (
-      <div className="row">
-        {this.renderDish(this.props.dish)}
-        {this.renderComments(this.props.dish)}
+      <div className="container">
+        <div className="row">
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link to="/home">Home</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <Link to="/menu">Menu</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+          </Breadcrumb>
+          <div className="col-12">
+            <h3>{this.props.dish.name}</h3>
+            <hr />
+          </div>
+        </div>
+        <div className="row">
+          {this.renderDish(this.props.dish)}
+          {this.renderComments(this.props.comments)}
+        </div>
       </div>
     );
   }

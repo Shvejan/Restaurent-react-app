@@ -15,6 +15,7 @@ import {
   ModalHeader,
   Label,
 } from "reactstrap";
+import { Loading } from "./Loading";
 import { LocalForm, Control, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -181,37 +182,54 @@ class DishDetails extends Component {
   };
 
   render() {
-    return (
-      <div className="container">
-        <div className="justify-content-center"></div>
-        <div className="row">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <Link to="/home">Home</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <Link to="/menu">Menu</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
-          </Breadcrumb>
-          <div className="col-12">
-            <h3>{this.props.dish.name}</h3>
-            <hr />
+    if (this.props.isLoading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <Loading />
           </div>
         </div>
-        <div className="row">
-          <ShowDish dish={this.props.dish} />
-          <RenderComments
-            comments={this.props.comments}
-            dishId={this.props.dish.id}
-            addComment={this.props.addComment}
-            togleModel={this.togleModel}
-            handleSubmit={this.handleSubmit}
-            isModelOpen={this.state.isModelOpen}
-          />
+      );
+    } else if (this.props.errMess) {
+      return (
+        <div className="container">
+          <div className="row">
+            <h4>{this.props.errMess}</h4>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else
+      return (
+        <div className="container">
+          <div className="justify-content-center"></div>
+          <div className="row">
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <Link to="/home">Home</Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem>
+                <Link to="/menu">Menu</Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <div className="col-12">
+              <h3>{this.props.dish.name}</h3>
+              <hr />
+            </div>
+          </div>
+          <div className="row">
+            <ShowDish dish={this.props.dish} />
+            <RenderComments
+              comments={this.props.comments}
+              dishId={this.props.dish.id}
+              addComment={this.props.addComment}
+              togleModel={this.togleModel}
+              handleSubmit={this.handleSubmit}
+              isModelOpen={this.state.isModelOpen}
+            />
+          </div>
+        </div>
+      );
   }
 }
 

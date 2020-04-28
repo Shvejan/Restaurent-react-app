@@ -19,6 +19,8 @@ import {
 import { Loading } from "./Loading";
 import { LocalForm, Control, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
+import { FadeTransform, Fade, Stagger } from "react-animation-components";
+
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length > len;
 const required = (val) => val && val.length && val != "--Rating--";
@@ -42,18 +44,22 @@ const RenderComments = (props) => {
         <h4>Comments</h4>
         <div>
           <ul className="list-unstyled">
-            {props.comments.map((c) => {
-              return (
-                <ul className="list-unstyled" key={c.author}>
-                  <li>{c.comment}</li>
-                  <li>
-                    -- {c.author} ,{" "}
-                    {new Date(c.date).toDateString().substring(4)}
-                  </li>
-                  <br />
-                </ul>
-              );
-            })}
+            <Stagger in>
+              {props.comments.map((c) => {
+                return (
+                  <Fade in>
+                    <ul className="list-unstyled" key={c.author}>
+                      <li>{c.comment}</li>
+                      <li>
+                        -- {c.author} ,{" "}
+                        {new Date(c.date).toDateString().substring(4)}
+                      </li>
+                      <br />
+                    </ul>
+                  </Fade>
+                );
+              })}
+            </Stagger>
           </ul>
         </div>
         <Row className="form-group">
@@ -68,7 +74,7 @@ const RenderComments = (props) => {
           <ModalBody>
             <LocalForm
               onSubmit={(values) =>
-                props.handleSubmit(values, props.dishId, props.addComment)
+                props.handleSubmit(values, props.dishId, props.postComment)
               }
             >
               <Row className="form-group">
@@ -179,15 +185,26 @@ const ShowDish = (props) => {
   } else if (props.dish != null)
     return (
       <div className="col-12 col-md-5 m-1" key={props.dish.name}>
-        <Card>
-          <CardImg top src={baseUrl + props.dish.image} alt={props.dish.name} />
-          <CardBody>
-            <CardTitle>
-              <h4>{props.dish.name}</h4>
-            </CardTitle>
-            <CardText>{props.dish.description}</CardText>
-          </CardBody>
-        </Card>
+        <FadeTransform
+          in
+          transformProps={{
+            exitTransform: "scale(0.5) translateY(-50%)",
+          }}
+        >
+          <Card>
+            <CardImg
+              top
+              src={baseUrl + props.dish.image}
+              alt={props.dish.name}
+            />
+            <CardBody>
+              <CardTitle>
+                <h4>{props.dish.name}</h4>
+              </CardTitle>
+              <CardText>{props.dish.description}</CardText>
+            </CardBody>
+          </Card>
+        </FadeTransform>
       </div>
     );
   else return <div></div>;
@@ -205,9 +222,9 @@ class DishDetails extends Component {
       isModelOpen: !this.state.isModelOpen,
     });
   };
-  handleSubmit = (values, dishId, addComment) => {
+  handleSubmit = (values, dishId, postComment) => {
     this.togleModel();
-    addComment(dishId, values.rating, values.name, values.comment);
+    postComment(dishId, values.rating, values.name, values.comment);
   };
 
   render() {
@@ -255,7 +272,7 @@ class DishDetails extends Component {
             <RenderComments
               comments={this.props.comments}
               dishId={this.props.dish.id}
-              addComment={this.props.addComment}
+              postComment={this.props.postComment}
               togleModel={this.togleModel}
               handleSubmit={this.handleSubmit}
               isModelOpen={this.state.isModelOpen}

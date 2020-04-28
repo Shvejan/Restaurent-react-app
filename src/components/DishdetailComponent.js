@@ -24,7 +24,19 @@ const minLength = (len) => (val) => val && val.length > len;
 const required = (val) => val && val.length && val != "--Rating--";
 
 const RenderComments = (props) => {
-  if (props.comments != null) {
+  if (props.isLoading) {
+    return (
+      <div className="col-12 col-md-5 m-1" key={props.comments}>
+        <Loading />
+      </div>
+    );
+  } else if (props.errMess) {
+    return (
+      <div className="col-12 col-md-5 m-1" key={props.comments}>
+        <h4>{props.errMess}</h4>
+      </div>
+    );
+  } else if (props.comments != null) {
     return (
       <div className="col-12 col-md-5 m-1" key={props.comments}>
         <h4>Comments</h4>
@@ -148,7 +160,23 @@ const RenderComments = (props) => {
   } else return <div></div>;
 };
 const ShowDish = (props) => {
-  if (props.dish != null)
+  if (props.isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  } else if (props.errMess) {
+    return (
+      <div className="container">
+        <div className="row">
+          <h4>{props.errMess}</h4>
+        </div>
+      </div>
+    );
+  } else if (props.dish != null)
     return (
       <div className="col-12 col-md-5 m-1" key={props.dish.name}>
         <Card>
@@ -219,7 +247,11 @@ class DishDetails extends Component {
             </div>
           </div>
           <div className="row">
-            <ShowDish dish={this.props.dish} />
+            <ShowDish
+              dish={this.props.dish}
+              isLoading={this.props.isLoading}
+              errMess={this.props.errMess}
+            />
             <RenderComments
               comments={this.props.comments}
               dishId={this.props.dish.id}
@@ -227,6 +259,8 @@ class DishDetails extends Component {
               togleModel={this.togleModel}
               handleSubmit={this.handleSubmit}
               isModelOpen={this.state.isModelOpen}
+              errMess={this.props.commentsErrMess}
+              isLoading={this.props.isLoading}
             />
           </div>
         </div>

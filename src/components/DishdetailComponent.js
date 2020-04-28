@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { baseUrl } from "../shared/baseUrl";
 import {
   Card,
   CardImg,
@@ -151,7 +152,7 @@ const ShowDish = (props) => {
     return (
       <div className="col-12 col-md-5 m-1" key={props.dish.name}>
         <Card>
-          <CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
+          <CardImg top src={baseUrl + props.dish.image} alt={props.dish.name} />
           <CardBody>
             <CardTitle>
               <h4>{props.dish.name}</h4>

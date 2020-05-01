@@ -17,6 +17,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import About from "./About";
 import { actions } from "react-redux-form";
+
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 const mapStateToProps = (state) => {
   return {
@@ -123,7 +124,6 @@ class Main extends Component {
                 path="/Restaurent-react-app/menu/:id"
                 component={dishClicked}
               />
-              <Redirect to="/Restaurent-react-app/home" />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

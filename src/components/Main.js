@@ -123,7 +123,7 @@ class Main extends Component {
                 path="/Restaurent-react-app/menu/:id"
                 component={dishClicked}
               />
-              <Redirect to="/Restaurent-react-app" />
+              <Redirect to="/Restaurent-react-app/home" />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

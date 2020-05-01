@@ -97,20 +97,20 @@ class Main extends Component {
             timeout={300}
           >
             <Switch>
-              <Route path="/home" component={HomePage} />
+              <Route path="/Restaurent-react-app/home" component={HomePage} />
               <Route
                 exact
-                path="/menu"
+                path="/Restaurent-react-app/menu"
                 component={() => <Menu dishes={this.props.dishes} />}
               />
               <Route
                 exact
-                path="/aboutus"
+                path="/Restaurent-react-app/aboutus"
                 component={() => <About leaders={this.props.leaders} />}
               />
               <Route
                 exact
-                path="/contactus"
+                path="/Restaurent-react-app/contactus"
                 component={() => (
                   <Contact
                     resetFeedbackForm={this.props.resetFeedbackForm}
@@ -119,8 +119,11 @@ class Main extends Component {
                 )}
               />
               } />
-              <Route path="/menu/:id" component={dishClicked} />
-              <Redirect to="/home" />
+              <Route
+                path="/Restaurent-react-app/menu/:id"
+                component={dishClicked}
+              />
+              <Redirect to="/Restaurent-react-app" />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

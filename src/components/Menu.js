@@ -17,7 +17,7 @@ class Menu extends Component {
       return (
         <div className="col-12 col-md-5 m-1" key={dish.id}>
           <Card>
-            <Link to={`/menu/${dish.id}`}>
+            <Link to={`/Restaurent-react-app/menu/${dish.id}`}>
               <CardImg
                 width="100%"
                 src={baseUrl + dish.image}

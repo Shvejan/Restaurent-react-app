@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7e5113de4fe2238c58c479c3786b0328",
+    "revision": "472baaa39bc28fa24fd9fbfa8d1ab23e",
     "url": "/Restaurent-react-app/index.html"
   },
   {
-    "revision": "e55faa97dfd21871a68c",
+    "revision": "9ccee6cd8c4f9a1aba40",
     "url": "/Restaurent-react-app/static/css/2.c6086962.chunk.css"
   },
   {
-    "revision": "49a643899c835a869205",
+    "revision": "d22d5842846121ccbf16",
     "url": "/Restaurent-react-app/static/css/main.616d76b1.chunk.css"
   },
   {
-    "revision": "e55faa97dfd21871a68c",
-    "url": "/Restaurent-react-app/static/js/2.d043f944.chunk.js"
+    "revision": "9ccee6cd8c4f9a1aba40",
+    "url": "/Restaurent-react-app/static/js/2.75fb768a.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/Restaurent-react-app/static/js/2.d043f944.chunk.js.LICENSE.txt"
+    "url": "/Restaurent-react-app/static/js/2.75fb768a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "49a643899c835a869205",
-    "url": "/Restaurent-react-app/static/js/main.fd476137.chunk.js"
+    "revision": "d22d5842846121ccbf16",
+    "url": "/Restaurent-react-app/static/js/main.02b0dc15.chunk.js"
   },
   {
     "revision": "c4a33b036e8991382068",

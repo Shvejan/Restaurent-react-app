@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Restaurent-react-app/static/css/main.616d76b1.chunk.css",
-    "main.js": "/Restaurent-react-app/static/js/main.fd476137.chunk.js",
-    "main.js.map": "/Restaurent-react-app/static/js/main.fd476137.chunk.js.map",
+    "main.js": "/Restaurent-react-app/static/js/main.02b0dc15.chunk.js",
+    "main.js.map": "/Restaurent-react-app/static/js/main.02b0dc15.chunk.js.map",
     "runtime-main.js": "/Restaurent-react-app/static/js/runtime-main.201c9f6b.js",
     "runtime-main.js.map": "/Restaurent-react-app/static/js/runtime-main.201c9f6b.js.map",
     "static/css/2.c6086962.chunk.css": "/Restaurent-react-app/static/css/2.c6086962.chunk.css",
-    "static/js/2.d043f944.chunk.js": "/Restaurent-react-app/static/js/2.d043f944.chunk.js",
-    "static/js/2.d043f944.chunk.js.map": "/Restaurent-react-app/static/js/2.d043f944.chunk.js.map",
+    "static/js/2.75fb768a.chunk.js": "/Restaurent-react-app/static/js/2.75fb768a.chunk.js",
+    "static/js/2.75fb768a.chunk.js.map": "/Restaurent-react-app/static/js/2.75fb768a.chunk.js.map",
     "index.html": "/Restaurent-react-app/index.html",
-    "precache-manifest.16615f3efccfe97bf5220d23b608de0b.js": "/Restaurent-react-app/precache-manifest.16615f3efccfe97bf5220d23b608de0b.js",
+    "precache-manifest.2dfd7628ee6a1505b8f170403257cdc7.js": "/Restaurent-react-app/precache-manifest.2dfd7628ee6a1505b8f170403257cdc7.js",
     "service-worker.js": "/Restaurent-react-app/service-worker.js",
     "static/css/2.c6086962.chunk.css.map": "/Restaurent-react-app/static/css/2.c6086962.chunk.css.map",
     "static/css/main.616d76b1.chunk.css.map": "/Restaurent-react-app/static/css/main.616d76b1.chunk.css.map",
-    "static/js/2.d043f944.chunk.js.LICENSE.txt": "/Restaurent-react-app/static/js/2.d043f944.chunk.js.LICENSE.txt",
+    "static/js/2.75fb768a.chunk.js.LICENSE.txt": "/Restaurent-react-app/static/js/2.75fb768a.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/Restaurent-react-app/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.201c9f6b.js",
     "static/css/2.c6086962.chunk.css",
-    "static/js/2.d043f944.chunk.js",
+    "static/js/2.75fb768a.chunk.js",
     "static/css/main.616d76b1.chunk.css",
-    "static/js/main.fd476137.chunk.js"
+    "static/js/main.02b0dc15.chunk.js"
   ]
 }

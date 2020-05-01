@@ -23,7 +23,7 @@ import { FadeTransform, Fade, Stagger } from "react-animation-components";
 
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length > len;
-const required = (val) => val && val.length && val != "--Rating--";
+const required = (val) => val && val.length && val !== "--Rating--";
 
 const RenderComments = (props) => {
   if (props.isLoading) {

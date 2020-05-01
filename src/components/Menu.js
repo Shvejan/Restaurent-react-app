@@ -67,6 +67,9 @@ class Menu extends Component {
               <hr />
             </div>
           </div>
+          <div className="alert alert-primary" role="alert">
+            Explore more by clicking on the images!
+          </div>
           <div className="row">{menu}</div>
         </div>
       );

@@ -71,7 +71,7 @@ class Header extends Component {
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink className="nav-link" to="/Restaurent-react-app/home">
+                  <NavLink className="nav-link" to="/Restaurent-react-app">
                     <span className="fa fa-home fa-lg"></span> Home
                   </NavLink>
                 </NavItem>

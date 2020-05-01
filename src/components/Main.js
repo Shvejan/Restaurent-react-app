@@ -98,7 +98,7 @@ class Main extends Component {
             timeout={300}
           >
             <Switch>
-              <Route path="/Restaurent-react-app/home" component={HomePage} />
+              <Route path="/Restaurent-react-app" component={HomePage} />
               <Route
                 exact
                 path="/Restaurent-react-app/menu"
